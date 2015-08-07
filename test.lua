@@ -19,4 +19,10 @@ act(m, 2, ease_cubic_in(transition_erase_l(0.5, 0)))
 act(m, 3, ease_cubic_out(transition_erase_l(0.5, 255)))
 populate(w, m, 0, 10)
 
+wv = wave_create()
+life_w(wv, 10)
+play(wv, 0, audio_clip('xx.mp3', 185, 10))
+play(wv, 0, reverse_w(10))
+clang(w, wv, 0)
+
 write(w, 'output.mp4')
