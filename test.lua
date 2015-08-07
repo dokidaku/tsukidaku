@@ -1,4 +1,4 @@
-w = world_create(600, 400, 10)
+w = world_create(600, 400, 10, 30, 44100)
 SHAPE_RECT = 0
 
 m = matter_create()

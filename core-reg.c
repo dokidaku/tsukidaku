@@ -81,7 +81,9 @@ static int tolua__world_create(lua_State *L) {
     int arg1 = luaL_checkinteger(L, 1);
     int arg2 = luaL_checkinteger(L, 2);
     float arg3 = luaL_checknumber(L, 3);
-    lua_pushinteger(L, daku_world_create(arg1, arg2, arg3));
+    int arg4 = luaL_checkinteger(L, 4);
+    int arg5 = luaL_checkinteger(L, 5);
+    lua_pushinteger(L, daku_world_create(arg1, arg2, arg3, arg4, arg5));
     return 1;
 }
 
