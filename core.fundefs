@@ -1,0 +1,16 @@
+daku_matter* daku_matter_create matter_create
+void daku_matter_setlife daku_matter* float life
+void daku_matter_setsize daku_matter* float float size
+void daku_matter_setgrosssize daku_matter* float float float float grosssize
+void daku_matter_setanchor daku_matter* float float anchor
+void daku_matter_setpos daku_matter* float float pos
+void daku_matter_act daku_matter* float daku_action* act
+
+daku_wave* daku_wave_create wave_create
+void daku_wave_setlife daku_wave* float life_w
+void daku_wave_play daku_wave* float daku_instrument* play
+
+daku_world* daku_world_create int int float world_create
+void daku_world_populate daku_world* daku_matter* float int populate
+void daku_world_clang daku_world* daku_wave* float clang
+void daku_world_write daku_world* char* write

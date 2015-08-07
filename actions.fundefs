@@ -1,0 +1,38 @@
+daku_action* daku_fx_moveby float float float move_by
+daku_action* daku_fx_moveto float float float move_to
+
+daku_action* daku_fx_fadeto float int fade_to
+daku_action* daku_fx_fadein float fade_in
+daku_action* daku_fx_fadeout float fade_out
+
+daku_action* daku_fx_scaleto float float float scale_to
+daku_action* daku_fx_scaleby float float float scale_by
+
+daku_action* daku_fx_rotateto float float rotate_to
+daku_action* daku_fx_rotateby float float rotate_by
+
+daku_action* daku_fx_skewto float float float skew_to
+daku_action* daku_fx_skewby float float float skew_by
+
+
+daku_action* daku_fx_flip_x flip_x
+daku_action* daku_fx_flip_y flip_y
+
+daku_action* daku_fx_freeze freeze
+daku_action* daku_fx_thaw thaw
+
+
+
+daku_action* daku_tr_erase_l float int transition_erase_l
+daku_action* daku_tr_erase_circle float int transition_erase_circle
+
+
+daku_instrument* daku_audio_reverse float reverse_w
+
+daku_action* daku_video_clip char* float float video_clip
+daku_action* daku_image_clip float char* image_clip
+daku_instrument* daku_audio_clip char* float float audio_clip
+
+daku_action* daku_text float char* char* int int int int text_clip
+
+daku_action* daku_shape float int int int shape
