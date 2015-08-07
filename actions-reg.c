@@ -168,6 +168,121 @@ static int tolua__shape(lua_State *L) {
     return 1;
 }
 
+static int tolua__ease_sine_in(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_sine_in(arg1));
+    return 1;
+}
+
+static int tolua__ease_sine_out(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_sine_out(arg1));
+    return 1;
+}
+
+static int tolua__ease_sine_inout(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_sine_inout(arg1));
+    return 1;
+}
+
+static int tolua__ease_quad_in(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quad_in(arg1));
+    return 1;
+}
+
+static int tolua__ease_quad_out(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quad_out(arg1));
+    return 1;
+}
+
+static int tolua__ease_quad_inout(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quad_inout(arg1));
+    return 1;
+}
+
+static int tolua__ease_cubic_in(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_cubic_in(arg1));
+    return 1;
+}
+
+static int tolua__ease_cubic_out(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_cubic_out(arg1));
+    return 1;
+}
+
+static int tolua__ease_cubic_inout(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_cubic_inout(arg1));
+    return 1;
+}
+
+static int tolua__ease_quart_in(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quart_in(arg1));
+    return 1;
+}
+
+static int tolua__ease_quart_out(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quart_out(arg1));
+    return 1;
+}
+
+static int tolua__ease_quart_inout(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quart_inout(arg1));
+    return 1;
+}
+
+static int tolua__ease_quint_in(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quint_in(arg1));
+    return 1;
+}
+
+static int tolua__ease_quint_out(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quint_out(arg1));
+    return 1;
+}
+
+static int tolua__ease_quint_inout(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_quint_inout(arg1));
+    return 1;
+}
+
+static int tolua__ease_circ_in(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_circ_in(arg1));
+    return 1;
+}
+
+static int tolua__ease_circ_out(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_circ_out(arg1));
+    return 1;
+}
+
+static int tolua__ease_circ_inout(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_ease_circ_inout(arg1));
+    return 1;
+}
+
+static int tolua__ease_time_scale(lua_State *L) {
+    daku_action* arg1 = luaL_checkinteger(L, 1);
+    float arg2 = luaL_checknumber(L, 2);
+    lua_pushinteger(L, daku_ease_time_scale(arg1, arg2));
+    return 1;
+}
+
 void register_actions(lua_State *L) {
     lua_pushcfunction(L, tolua__move_by);
     lua_setglobal(L, "move_by");
@@ -215,4 +330,42 @@ void register_actions(lua_State *L) {
     lua_setglobal(L, "text_clip");
     lua_pushcfunction(L, tolua__shape);
     lua_setglobal(L, "shape");
+    lua_pushcfunction(L, tolua__ease_sine_in);
+    lua_setglobal(L, "ease_sine_in");
+    lua_pushcfunction(L, tolua__ease_sine_out);
+    lua_setglobal(L, "ease_sine_out");
+    lua_pushcfunction(L, tolua__ease_sine_inout);
+    lua_setglobal(L, "ease_sine_inout");
+    lua_pushcfunction(L, tolua__ease_quad_in);
+    lua_setglobal(L, "ease_quad_in");
+    lua_pushcfunction(L, tolua__ease_quad_out);
+    lua_setglobal(L, "ease_quad_out");
+    lua_pushcfunction(L, tolua__ease_quad_inout);
+    lua_setglobal(L, "ease_quad_inout");
+    lua_pushcfunction(L, tolua__ease_cubic_in);
+    lua_setglobal(L, "ease_cubic_in");
+    lua_pushcfunction(L, tolua__ease_cubic_out);
+    lua_setglobal(L, "ease_cubic_out");
+    lua_pushcfunction(L, tolua__ease_cubic_inout);
+    lua_setglobal(L, "ease_cubic_inout");
+    lua_pushcfunction(L, tolua__ease_quart_in);
+    lua_setglobal(L, "ease_quart_in");
+    lua_pushcfunction(L, tolua__ease_quart_out);
+    lua_setglobal(L, "ease_quart_out");
+    lua_pushcfunction(L, tolua__ease_quart_inout);
+    lua_setglobal(L, "ease_quart_inout");
+    lua_pushcfunction(L, tolua__ease_quint_in);
+    lua_setglobal(L, "ease_quint_in");
+    lua_pushcfunction(L, tolua__ease_quint_out);
+    lua_setglobal(L, "ease_quint_out");
+    lua_pushcfunction(L, tolua__ease_quint_inout);
+    lua_setglobal(L, "ease_quint_inout");
+    lua_pushcfunction(L, tolua__ease_circ_in);
+    lua_setglobal(L, "ease_circ_in");
+    lua_pushcfunction(L, tolua__ease_circ_out);
+    lua_setglobal(L, "ease_circ_out");
+    lua_pushcfunction(L, tolua__ease_circ_inout);
+    lua_setglobal(L, "ease_circ_inout");
+    lua_pushcfunction(L, tolua__ease_time_scale);
+    lua_setglobal(L, "ease_time_scale");
 }

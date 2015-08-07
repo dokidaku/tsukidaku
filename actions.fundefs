@@ -36,3 +36,29 @@ daku_instrument* daku_audio_clip char* float float audio_clip
 daku_action* daku_text float char* char* int int int int text_clip
 
 daku_action* daku_shape float int int int shape
+
+daku_action* daku_ease_sine_in daku_action* ease_sine_in
+daku_action* daku_ease_sine_out daku_action* ease_sine_out
+daku_action* daku_ease_sine_inout daku_action* ease_sine_inout
+
+daku_action* daku_ease_quad_in daku_action* ease_quad_in
+daku_action* daku_ease_quad_out daku_action* ease_quad_out
+daku_action* daku_ease_quad_inout daku_action* ease_quad_inout
+
+daku_action* daku_ease_cubic_in daku_action* ease_cubic_in
+daku_action* daku_ease_cubic_out daku_action* ease_cubic_out
+daku_action* daku_ease_cubic_inout daku_action* ease_cubic_inout
+
+daku_action* daku_ease_quart_in daku_action* ease_quart_in
+daku_action* daku_ease_quart_out daku_action* ease_quart_out
+daku_action* daku_ease_quart_inout daku_action* ease_quart_inout
+
+daku_action* daku_ease_quint_in daku_action* ease_quint_in
+daku_action* daku_ease_quint_out daku_action* ease_quint_out
+daku_action* daku_ease_quint_inout daku_action* ease_quint_inout
+
+daku_action* daku_ease_circ_in daku_action* ease_circ_in
+daku_action* daku_ease_circ_out daku_action* ease_circ_out
+daku_action* daku_ease_circ_inout daku_action* ease_circ_inout
+
+daku_action* daku_ease_time_scale daku_action* float ease_time_scale
