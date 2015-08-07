@@ -1,0 +1,21 @@
+w = world_create(600, 400, 10)
+
+m = matter_create()
+life(m, 7)
+size(m, 200, 400)
+anchor(m, 0, 0)
+pos(m, 233, -40)
+act(m, 0, shape(7, SHAPE_RECT, 0x66ccff, 128))
+act(m, 0, fade_in(2))
+populate(w, m, 2, 10)
+
+m = matter_create()
+life(m, 5)
+size(m, 300, 200)
+pos(m, 300, 200)
+act(m, 0, video_clip('xx.mp4', 3, 5))
+act(m, 2, ease_quad_in(transition_erase_l(0.5, 0))
+act(m, 3, ease_quad_out(transition_erase_l(0.5, 255))
+populate(w, m, 0, 1)
+
+write(w, 'output.mp4')
