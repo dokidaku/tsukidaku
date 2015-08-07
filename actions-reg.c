@@ -54,6 +54,20 @@ static int tolua__scale_by(lua_State *L) {
     return 1;
 }
 
+static int tolua__zoom_to(lua_State *L) {
+    float arg1 = luaL_checknumber(L, 1);
+    float arg2 = luaL_checknumber(L, 2);
+    lua_pushinteger(L, daku_fx_zoomto(arg1, arg2));
+    return 1;
+}
+
+static int tolua__zoom_by(lua_State *L) {
+    float arg1 = luaL_checknumber(L, 1);
+    float arg2 = luaL_checknumber(L, 2);
+    lua_pushinteger(L, daku_fx_zoomby(arg1, arg2));
+    return 1;
+}
+
 static int tolua__rotate_to(lua_State *L) {
     float arg1 = luaL_checknumber(L, 1);
     float arg2 = luaL_checknumber(L, 2);
@@ -298,6 +312,10 @@ void register_actions(lua_State *L) {
     lua_setglobal(L, "scale_to");
     lua_pushcfunction(L, tolua__scale_by);
     lua_setglobal(L, "scale_by");
+    lua_pushcfunction(L, tolua__zoom_to);
+    lua_setglobal(L, "zoom_to");
+    lua_pushcfunction(L, tolua__zoom_by);
+    lua_setglobal(L, "zoom_by");
     lua_pushcfunction(L, tolua__rotate_to);
     lua_setglobal(L, "rotate_to");
     lua_pushcfunction(L, tolua__rotate_by);

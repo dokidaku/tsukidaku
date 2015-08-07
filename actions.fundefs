@@ -7,6 +7,8 @@ daku_action* daku_fx_fadeout float fade_out
 
 daku_action* daku_fx_scaleto float float float scale_to
 daku_action* daku_fx_scaleby float float float scale_by
+daku_action* daku_fx_zoomto float float zoom_to
+daku_action* daku_fx_zoomby float float zoom_by
 
 daku_action* daku_fx_rotateto float float rotate_to
 daku_action* daku_fx_rotateby float float rotate_by

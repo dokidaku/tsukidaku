@@ -8,6 +8,7 @@ anchor(m, 0, 0)
 pos(m, 233, 0)
 act(m, 0, shape(7.0, SHAPE_RECT, 0x66ccff, 255))
 act(m, 0, fade_in(2.0))
+act(m, 4, ease_sine_inout(zoom_by(1, 0.5)))
 populate(w, m, 2, 1)
 
 m = matter_create()
