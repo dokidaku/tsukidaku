@@ -1,4 +1,6 @@
 #!/usr/local/bin/lua
+-- Usage: echo '<module_name>' | ./tolua.lua
+-- Existing module names are 'actions' and 'core'.
 
 function split(s)
     local a, w, i
@@ -46,15 +48,17 @@ function tolua(list)
     return s
 end
 
-print('#include <libdaku/daku.h>\n' ..
-    '#include <lua.h>\n' ..
-    '#include <lauxlib.h>\n' ..
-    '#include <lualib.h>\n')
-
 module = io.read()
 regist_code = ''
 list = nil
 enum_val = 0
+
+output = io.open(module .. '-reg.c', 'w')
+output:write('#include <libdaku/daku.h>\n' ..
+    '#include <lua.h>\n' ..
+    '#include <lauxlib.h>\n' ..
+    '#include <lualib.h>\n\n')
+
 for s in io.lines(module .. '.fundefs') do
     if s ~= '' then
         list = split(s)
@@ -64,7 +68,7 @@ for s in io.lines(module .. '.fundefs') do
                 '    lua_setglobal(L, "' .. list[2] .. '");\n'
             enum_val = enum_val + 1
         else
-            print(tolua(list))
+            output:write(tolua(list), '\n')
             regist_code = regist_code ..
                 '    lua_pushcfunction(L, tolua__' .. list[#list] .. ');\n' ..
                 '    lua_setglobal(L, "' .. list[#list] .. '");\n'
@@ -74,5 +78,6 @@ for s in io.lines(module .. '.fundefs') do
     end
 end
 
-print('void register_' .. module .. '(lua_State *L) {')
-print(regist_code .. '}')
+output:write('void register_' .. module .. '(lua_State *L) {\n')
+output:write(regist_code .. '}\n')
+output:close()
