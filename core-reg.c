@@ -71,6 +71,13 @@ static int tolua__zoom(lua_State *L) {
     return 0;
 }
 
+static int tolua__rotate(lua_State *L) {
+    daku_matter* arg1 = luaL_checkinteger(L, 1);
+    float arg2 = luaL_checknumber(L, 2);
+    daku_matter_setrotation(arg1, arg2);
+    return 0;
+}
+
 static int tolua__act(lua_State *L) {
     daku_matter* arg1 = luaL_checkinteger(L, 1);
     float arg2 = luaL_checknumber(L, 2);
@@ -152,6 +159,8 @@ void register_core(lua_State *L) {
     lua_setglobal(L, "scale");
     lua_pushcfunction(L, tolua__zoom);
     lua_setglobal(L, "zoom");
+    lua_pushcfunction(L, tolua__rotate);
+    lua_setglobal(L, "rotate");
     lua_pushcfunction(L, tolua__act);
     lua_setglobal(L, "act");
     lua_pushcfunction(L, tolua__wave_create);
