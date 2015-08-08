@@ -386,4 +386,16 @@ void register_actions(lua_State *L) {
     lua_setglobal(L, "ease_circ_inout");
     lua_pushcfunction(L, tolua__ease_time_scale);
     lua_setglobal(L, "ease_time_scale");
+    lua_pushinteger(L, 0);
+    lua_setglobal(L, "HALIGN_LEFT");
+    lua_pushinteger(L, 1);
+    lua_setglobal(L, "HALIGN_RIGHT");
+    lua_pushinteger(L, 2);
+    lua_setglobal(L, "HALIGN_CENTRE");
+    lua_pushinteger(L, 0);
+    lua_setglobal(L, "SHAPE_RECT");
+    lua_pushinteger(L, 1);
+    lua_setglobal(L, "SHAPE_ELLIPSE");
+    lua_pushinteger(L, 2);
+    lua_setglobal(L, "SHAPE_POLYGON");
 }

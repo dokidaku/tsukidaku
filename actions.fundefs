@@ -64,3 +64,11 @@ daku_action* daku_ease_circ_out daku_action* ease_circ_out
 daku_action* daku_ease_circ_inout daku_action* ease_circ_inout
 
 daku_action* daku_ease_time_scale daku_action* float ease_time_scale
+
+enum HALIGN_LEFT
+enum HALIGN_RIGHT
+enum HALIGN_CENTRE
+
+enum SHAPE_RECT
+enum SHAPE_ELLIPSE
+enum SHAPE_POLYGON

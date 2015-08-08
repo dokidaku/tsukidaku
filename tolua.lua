@@ -54,13 +54,25 @@ print('#include <libdaku/daku.h>\n' ..
 module = io.read()
 regist_code = ''
 list = nil
-for s in io.lines(module .. '.fundefs') do if s ~= '' then
-    list = split(s)
-    print(tolua(list))
-    regist_code = regist_code ..
-        '    lua_pushcfunction(L, tolua__' .. list[#list] .. ');\n' ..
-        '    lua_setglobal(L, "' .. list[#list] .. '");\n'
-end end
+enum_val = 0
+for s in io.lines(module .. '.fundefs') do
+    if s ~= '' then
+        list = split(s)
+        if list[1] == 'enum' then
+            regist_code = regist_code ..
+                '    lua_pushinteger(L, ' .. enum_val .. ');\n' ..
+                '    lua_setglobal(L, "' .. list[2] .. '");\n'
+            enum_val = enum_val + 1
+        else
+            print(tolua(list))
+            regist_code = regist_code ..
+                '    lua_pushcfunction(L, tolua__' .. list[#list] .. ');\n' ..
+                '    lua_setglobal(L, "' .. list[#list] .. '");\n'
+        end
+    else
+        enum_val = 0
+    end
+end
 
 print('void register_' .. module .. '(lua_State *L) {')
 print(regist_code .. '}')
