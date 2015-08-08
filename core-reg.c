@@ -49,6 +49,28 @@ static int tolua__pos(lua_State *L) {
     return 0;
 }
 
+static int tolua__opacity(lua_State *L) {
+    daku_matter* arg1 = luaL_checkinteger(L, 1);
+    int arg2 = luaL_checkinteger(L, 2);
+    daku_matter_setopacity(arg1, arg2);
+    return 0;
+}
+
+static int tolua__scale(lua_State *L) {
+    daku_matter* arg1 = luaL_checkinteger(L, 1);
+    float arg2 = luaL_checknumber(L, 2);
+    float arg3 = luaL_checknumber(L, 3);
+    daku_matter_setscale(arg1, arg2, arg3);
+    return 0;
+}
+
+static int tolua__zoom(lua_State *L) {
+    daku_matter* arg1 = luaL_checkinteger(L, 1);
+    float arg2 = luaL_checknumber(L, 2);
+    daku_matter_setzoom(arg1, arg2);
+    return 0;
+}
+
 static int tolua__act(lua_State *L) {
     daku_matter* arg1 = luaL_checkinteger(L, 1);
     float arg2 = luaL_checknumber(L, 2);
@@ -124,6 +146,12 @@ void register_core(lua_State *L) {
     lua_setglobal(L, "anchor");
     lua_pushcfunction(L, tolua__pos);
     lua_setglobal(L, "pos");
+    lua_pushcfunction(L, tolua__opacity);
+    lua_setglobal(L, "opacity");
+    lua_pushcfunction(L, tolua__scale);
+    lua_setglobal(L, "scale");
+    lua_pushcfunction(L, tolua__zoom);
+    lua_setglobal(L, "zoom");
     lua_pushcfunction(L, tolua__act);
     lua_setglobal(L, "act");
     lua_pushcfunction(L, tolua__wave_create);

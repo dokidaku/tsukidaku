@@ -4,6 +4,9 @@ void daku_matter_setsize daku_matter* float float size
 void daku_matter_setgrosssize daku_matter* float float float float grosssize
 void daku_matter_setanchor daku_matter* float float anchor
 void daku_matter_setpos daku_matter* float float pos
+void daku_matter_setopacity daku_matter* int opacity
+void daku_matter_setscale daku_matter* float float scale
+void daku_matter_setzoom daku_matter* float zoom
 void daku_matter_act daku_matter* float daku_action* act
 
 daku_wave* daku_wave_create wave_create
