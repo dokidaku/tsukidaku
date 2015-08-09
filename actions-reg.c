@@ -118,6 +118,19 @@ static int tolua__thaw(lua_State *L) {
     return 1;
 }
 
+static int tolua__set_pix_opacity(lua_State *L) {
+    int arg1 = luaL_checkinteger(L, 1);
+    lua_pushinteger(L, daku_fx_setpixopacity(arg1));
+    return 1;
+}
+
+static int tolua__set_pix_opacity_cont(lua_State *L) {
+    float arg1 = luaL_checknumber(L, 1);
+    int arg2 = luaL_checkinteger(L, 2);
+    lua_pushinteger(L, daku_fx_setpixopacitycont(arg1, arg2));
+    return 1;
+}
+
 static int tolua__transition_erase_l(lua_State *L) {
     float arg1 = luaL_checknumber(L, 1);
     int arg2 = luaL_checkinteger(L, 2);
@@ -332,6 +345,10 @@ void register_actions(lua_State *L) {
     lua_setglobal(L, "freeze");
     lua_pushcfunction(L, tolua__thaw);
     lua_setglobal(L, "thaw");
+    lua_pushcfunction(L, tolua__set_pix_opacity);
+    lua_setglobal(L, "set_pix_opacity");
+    lua_pushcfunction(L, tolua__set_pix_opacity_cont);
+    lua_setglobal(L, "set_pix_opacity_cont");
     lua_pushcfunction(L, tolua__transition_erase_l);
     lua_setglobal(L, "transition_erase_l");
     lua_pushcfunction(L, tolua__transition_erase_circle);

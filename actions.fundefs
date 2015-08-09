@@ -23,7 +23,8 @@ daku_action* daku_fx_flip_y flip_y
 daku_action* daku_fx_freeze freeze
 daku_action* daku_fx_thaw thaw
 
-
+daku_action* daku_fx_setpixopacity int set_pix_opacity
+daku_action* daku_fx_setpixopacitycont float int set_pix_opacity_cont
 
 daku_action* daku_tr_erase_l float int transition_erase_l
 daku_action* daku_tr_erase_circle float int transition_erase_circle
